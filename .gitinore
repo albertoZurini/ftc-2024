@@ -1,0 +1,52 @@
+# Rust-related
+target/
+**/target/
+**/*.rs.bk
+Cargo.lock
+Cargo.toml.orig
+
+# Build artifacts
+*.d
+*.rlib
+*.o
+*.so
+*.dylib
+*.dll
+*.exe
+*.a
+
+# Rust tooling and editor specific
+**/*.rs.bk
+*.rs.bk
+*.clippy.toml
+*.cargo/
+.vscode/
+.idea/
+*.rs.bk
+
+# Gradle-related
+.gradle/
+build/
+!gradle/wrapper/gradle-wrapper.jar
+
+# Gradle log files
+gradle-app.setting
+gradle.log
+
+# IntelliJ IDEA and Android Studio
+.idea
+*.iml
+*.ipr
+*.iws
+out/
+# VS Code
+.vscode/
+
+# OS and editor-specific
+.DS_Store
+*.swp
+*.swo
+*~
+
+# Other
+*.log
