@@ -22,7 +22,7 @@ impl TokenWithBondingCurve {
         e.storage().set("reserve_balance", INITIAL_RESERVE_BALANCE); // Starting reserve
     }
 
-    fn buy_tokens(e: Env, buyer: Address, amount_in_base_currency: i128) -> i128 {
+    fn mint_tokens(e: Env, buyer: Address, amount_in_base_currency: i128) -> i128 {
         let mut current_price = e.storage().get::<_, f64>("current_price").unwrap_or(INITIAL_PRICE);
         let mut total_supply = e.storage().get::<_, i128>("total_supply").unwrap_or(80);
         let mut reserve_balance = e.storage().get::<_, f64>("reserve_balance").unwrap_or(INITIAL_RESERVE_BALANCE);
@@ -53,7 +53,7 @@ impl TokenWithBondingCurve {
         mint_amount as i128
     }
 
-    fn sell_tokens(e: Env, seller: Address, tokens_to_sell: i128) -> i128 {
+    fn burn_tokens(e: Env, seller: Address, tokens_to_sell: i128) -> i128 {
         let mut current_price = e.storage().get::<_, f64>("current_price").unwrap();
         let mut total_supply = e.storage().get::<_, i128>("total_supply").unwrap();
         let mut reserve_balance = e.storage().get::<_, f64>("reserve_balance").unwrap();
