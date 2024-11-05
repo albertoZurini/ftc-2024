@@ -1,0 +1,83 @@
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+
+<style>
+html, body {
+    margin: 0;
+    background: #111;
+    font-family: Roboto;
+}
+
+    /* BUTTON GLOW */
+.btn-glow {
+   color: #fff !important;
+   display: inline-block;
+   background: rgb(138,97,248);
+   background: -moz-linear-gradient(left, rgba(138,97,248,1) 0%, rgba(236,95,231,1) 100%);
+   background: -webkit-linear-gradient(left, rgba(138,97,248,1) 0%,rgba(236,95,231,1) 100%);
+   background: linear-gradient(to right, rgba(138,97,248,1) 0%,rgba(236,95,231,1) 100%);
+   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#8a61f8', endColorstr='#ec5fe7',GradientType=1 );
+   border: none;
+   cursor: pointer;
+   text-align: center;
+   font-weight: bold;
+   font-size: 10vh;
+   border-radius: 25px;
+   line-height: calc(100vh - 300px);
+   letter-spacing: 0.07em;
+   text-decoration: none !important;
+   text-transform: uppercase;
+   padding: 0 30px;
+   transition: 0.3s;
+   box-shadow: none;
+   animation: glow 2s infinite;
+   animation-timing-function: ease-out;
+   position: relative;
+   margin: 50px;
+   width: calc(100vw - 160px);
+   height: calc(100vh - 300px);
+}
+.btn-glow:hover {
+   box-shadow: 0 0 0 10px #3daaa200;
+   transition: .8s;
+}
+@keyframes glow{
+   0% { box-shadow: 0 0 20px #8b61f844; text-shadow:  0 0 0px #fff; }
+   40% { box-shadow: 0 0 100px #8b61f8ee; text-shadow:  0 0 20px #fff;}
+   100% { box-shadow: 0 0 20px #8b61f844; text-shadow:  0 0 1px #fff; }
+}
+.btn-hover-shine {
+   position: relative;
+}
+.btn-hover-shine:after {
+   content: '';
+   position: absolute;
+   display: block;
+   top: 0;
+   height: 100%;
+   right: 80%;
+   width: 1px;
+   background-color: #ffffff00;
+   box-shadow: 0 0 20px #ffd2fe00, 0 0 10px #ffd2fe00, 0 0 5px #ffd2fe00, 0 0 2px #ffd2fe00;
+   opacity: 1;
+}
+.btn-hover-shine:hover:after {
+   right: 2%;
+   background-color: #ffffffff;
+   box-shadow: 0 0 30px #ffd2feff, 0 0 15px #ffd2feff, 0 0 7px #ffd2feff, 0 0 3px #ffd2feff;
+   opacity: 0;
+   transition: 0.6s;
+   -webkit-transition: 0.6s;
+}
+</style>
+
+
+<script>
+    var hash = window.location.hash.substr(1) || "web+stellar:GBXU6KDGPVMYRMG5CQ7FRX7HP2XCDVH3SQH3JNS4YQJ7HCVD2HI25PPK?amount=10";
+
+document.write(`<a class="btn-glow btn-hover-shine"
+href="${hash}"
+>PAY</a>`)
+
+</script>

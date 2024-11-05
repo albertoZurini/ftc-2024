@@ -1,0 +1,1 @@
+scp -P 10022 ./index.html ubuntu@zurini.dev:/opt/nginx/sites/res.zurini.tk/war/ftc
