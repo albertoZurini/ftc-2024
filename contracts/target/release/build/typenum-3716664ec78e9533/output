@@ -1,0 +1,3 @@
+cargo:rerun-if-changed=build/main.rs
+cargo:rustc-env=TYPENUM_BUILD_CONSTS=/home/rex/Documents/hackathon/ftc-2024/contracts/target/release/build/typenum-3716664ec78e9533/out/consts.rs
+cargo:rustc-env=TYPENUM_BUILD_OP=/home/rex/Documents/hackathon/ftc-2024/contracts/target/release/build/typenum-3716664ec78e9533/out/op.rs
