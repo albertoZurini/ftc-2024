@@ -74,7 +74,7 @@ fun MainScreen(
         ) {
             Text("Go to HCE (Host Card Emulation)")
         }
-
+/*
         Button(
             onClick = onNavigateToFIAT,
             modifier = Modifier
@@ -83,5 +83,6 @@ fun MainScreen(
         ) {
             Text("Receive FIAT payment")
         }
+        */
     }
 }

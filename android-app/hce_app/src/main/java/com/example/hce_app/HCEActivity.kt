@@ -26,8 +26,8 @@ class HCEActivity : ComponentActivity() {
 
     private var nfcMessage: String by mutableStateOf("Hello")
 
-    private var address: String by mutableStateOf("0x97324859b73833dC6ACAFd216B1DB57EfDac9Fb7")
-    private var amount: String by mutableStateOf("1000000000")
+    private var address: String by mutableStateOf("GBXU6KDGPVMYRMG5CQ7FRX7HP2XCDVH3SQH3JNS4YQJ7HCVD2HI25PPK")
+    private var amount: String by mutableStateOf("10")
     private var chainID: String by mutableStateOf("0x18e")
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -57,11 +57,13 @@ class HCEActivity : ComponentActivity() {
                         onValueChange = { amount = it },
                         label = { Text("Amount to be paid") }
                     )
+                    /*
                     TextField(
                         value = chainID,
                         onValueChange = { chainID = it },
                         label = { Text("chainID") }
                     )
+                    */
                     Button(
                         onClick={
                             setNFCMessage()
@@ -88,7 +90,7 @@ class HCEActivity : ComponentActivity() {
 
     private fun setNFCMessage() {
         // Combine all the data into a metamask url
-        val urlToCast = "https://metamask.app.link/send/$address@$chainID?value=$amount";
+        val urlToCast = "web+stellar:$address?amount=$amount";
         if (TextUtils.isEmpty(urlToCast)) {
             Toast.makeText(
                 this,
