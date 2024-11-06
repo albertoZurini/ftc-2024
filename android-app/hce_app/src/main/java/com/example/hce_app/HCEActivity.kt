@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.nfc.NfcAdapter
 import android.os.Bundle
 import android.text.TextUtils
+import android.util.Log
 import android.widget.Toast
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -22,6 +23,8 @@ import androidx.compose.ui.Modifier
 import com.example.hce_app.cardEmulation.KHostApduService
 
 class HCEActivity : ComponentActivity() {
+    private val TAG = "HCEActivity"
+
     private var nfcAdapter: NfcAdapter? = null
 
     private var nfcMessage: String by mutableStateOf("Hello")
@@ -32,6 +35,15 @@ class HCEActivity : ComponentActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
+
+        val b = intent.extras
+        val data = b!!.getString("data").toString()
+        if(data.length > 0){
+            if (data != null) {
+                setNFCMessage(data)
+            }
+        }
+
 
         nfcAdapter = NfcAdapter.getDefaultAdapter(this)
 
@@ -88,9 +100,15 @@ class HCEActivity : ComponentActivity() {
         }
     }
 
-    private fun setNFCMessage() {
+    private fun setNFCMessage(message: String = "") {
         // Combine all the data into a metamask url
-        val urlToCast = "web+stellar:$address?amount=$amount";
+        var urlToCast: String = ""
+        if(message.length == 0) {
+            urlToCast = "web+stellar:$address?amount=$amount";
+        } else {
+            urlToCast = message
+        }
+        Log.i(TAG, urlToCast)
         if (TextUtils.isEmpty(urlToCast)) {
             Toast.makeText(
                 this,

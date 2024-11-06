@@ -25,7 +25,7 @@ import com.example.hce_app.parser.NDEFTools
 import java.io.IOException
 
 class NFCReaderActivity : ComponentActivity() {
-    private val TAG = "ReaderMainActivity"
+    private val TAG = "NFCReaderActivity"
 
     private var nfcAdapter: NfcAdapter? = null
     private var currentTag: Tag? = null

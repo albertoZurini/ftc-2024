@@ -26,6 +26,16 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
 
+            <intent-filter>
+                <action android:name="android.intent.action.VIEW" />
+                <category android:name="android.intent.category.DEFAULT" />
+                <category android:name="android.intent.category.BROWSABLE" />
+                <!-- Accepts URIs that begin with "p2pay://p2pay” -->
+                <data android:scheme="p2pay"
+                    android:host="p2pay" />
+            </intent-filter>
+
+
         </activity>
         <activity android:name=".NFCReaderActivity" />
         <activity android:name=".HCEActivity" />
