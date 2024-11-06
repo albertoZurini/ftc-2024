@@ -1,0 +1,240 @@
+/* Base styles for the page layout */
+.page {
+  --gray-rgb: 0, 0, 0;
+  --gray-alpha-200: rgba(var(--gray-rgb), 0.08);
+  --gray-alpha-100: rgba(var(--gray-rgb), 0.05);
+
+  --button-primary-hover: #383838;
+  --button-secondary-hover: #f2f2f2;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 40px;
+  gap: 40px;
+  font-family: var(--font-geist-sans);
+}
+
+@media (prefers-color-scheme: dark) {
+  .page {
+    --gray-rgb: 255, 255, 255;
+    --gray-alpha-200: rgba(var(--gray-rgb), 0.145);
+    --gray-alpha-100: rgba(var(--gray-rgb), 0.06);
+
+    --button-primary-hover: #ccc;
+    --button-secondary-hover: #1a1a1a;
+  }
+}
+
+/* Section for course information */
+.courseInfo {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--gray-alpha-100);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.courseInfo h2 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.thumbnail {
+  width: 100%;
+  max-width: 400px;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+/* Form styles */
+.form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.formGroup {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 8px;
+  width: 100%;
+}
+
+.formGroup label {
+  font-size: 1rem;
+  color: #333;
+}
+
+.formGroup input,
+.formGroup textarea {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+
+.submitButton {
+  background-color: #0070f3;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  font-size: 1rem;
+}
+
+.submitButton:hover {
+  background-color: #005bb5;
+}
+
+/* Section to add new content */
+.addContentSection {
+  width: 100%;
+  max-width: 800px;
+  background-color: var(--gray-alpha-100);
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.addContentSection h2 {
+  font-size: 1.75rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+/* Course content grid */
+.courses {
+  width: 100%;
+  max-width: 1200px;
+}
+
+.courses h2 {
+  font-size: 2rem;
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.courseGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+}
+
+.courseGrid .courseItem {
+  background-color: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+}
+
+.courseGrid .courseItem img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.courseGrid .courseItem h3 {
+  font-size: 1.25rem;
+  margin-top: 15px;
+  color: #333;
+}
+
+.courseGrid .courseItem p {
+  color: #666;
+  font-size: 1rem;
+  margin-top: 10px;
+}
+
+.courseGrid .courseItem .watchButton {
+  margin-top: 15px;
+  display: inline-block;
+  padding: 8px 16px;
+  background-color: #0070f3;
+  color: white;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.courseGrid .courseItem .watchButton:hover {
+  background-color: #005bb5;
+}
+
+/* Navbar styles */
+.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 64px;
+  padding: 0 16px;
+  background-color: var(--gray-alpha-200);
+  color: var(--foreground);
+}
+
+.navbar-logo {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: inherit;
+}
+
+.navbar-brand {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.navbar-links {
+  display: flex;
+  gap: 16px;
+}
+
+.nav-link {
+  padding: 8px 16px;
+  color: inherit;
+  text-decoration: none;
+  border-radius: 4px;
+  transition: background-color 0.2s;
+}
+
+.nav-link:hover {
+  background-color: var(--button-secondary-hover);
+}
+
+.nav-link.active {
+  font-weight: bold;
+  color: var(--button-primary-hover);
+}
+
+.navbar-user {
+  display: flex;
+  align-items: center;
+}
+
+.login-button,
+.logout-button {
+  padding: 8px 16px;
+  border: none;
+  border-radius: 4px;
+  background-color: var(--button-primary-hover);
+  color: var(--foreground);
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.login-button:hover,
+.logout-button:hover {
+  background-color: var(--button-secondary-hover);
+}

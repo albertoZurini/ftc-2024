@@ -1,0 +1,148 @@
+.container {
+  display: flex;
+  gap: 2rem;
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+}
+
+.inputGroup {
+  width: 100%;
+  max-width: 550px;
+  margin-bottom: 1rem;
+}
+
+.inputGroup label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #4a5568;
+  margin-bottom: 0.5rem;
+}
+
+.inputGroup input,
+.inputGroup textarea {
+  width: 100%;
+  padding: 0.5rem;
+  border: 1px solid #cbd5e0;
+  border-radius: 0.375rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.05);
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.inputGroup input:focus,
+.inputGroup textarea:focus {
+  border-color: #3182ce;
+  box-shadow: 0 0 0 1px #3182ce;
+}
+
+.dragDropArea {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+  width: 100%;
+  max-width: 550px;
+  border: 2px dashed #718096;
+  border-radius: 0.75rem;
+  background-color: #f7fafc;
+  color: #2d3748;
+  text-align: center;
+  cursor: pointer;
+  transition: border-color 0.2s;
+}
+
+.dragDropArea.dragActive {
+  border-color: #3182ce;
+}
+
+.dragDropArea .icon {
+  pointer-events: none;
+}
+
+.dragDropArea .text {
+  pointer-events: none;
+  margin-top: 0.5rem;
+  font-size: 1.125rem;
+}
+
+.dragDropArea .fileInfo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.375rem;
+  margin-top: 2rem;
+}
+
+.dragDropArea .fileInfo .fileName {
+  font-size: 0.875rem;
+}
+
+.dragDropArea .fileInfo .removeButton {
+  padding: 0.25rem;
+  font-size: 0.875rem;
+  color: #e53e3e;
+  cursor: pointer;
+}
+
+.statusMessages {
+  margin-top: 1.5rem;
+  width: 100%;
+  max-width: 550px;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.statusMessage {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.5rem;
+  border-radius: 0.375rem;
+}
+
+.statusMessage.done {
+  color: #38a169;
+}
+
+.statusMessage.error {
+  color: #e53e3e;
+}
+
+.statusMessage.loading {
+  color: #3182ce;
+}
+
+.alert {
+  margin-top: 2rem;
+  max-width: 580px;
+}
+
+.submitButton {
+  margin-top: 1.5rem;
+}
+
+.successMessage {
+  margin-top: 2rem;
+  max-width: 580px;
+  text-align: center;
+}
+
+.successMessage .icon {
+  color: #38a169;
+}
+
+.successMessage .text {
+  margin-top: 0.5rem;
+  font-size: 1rem;
+}
+
+.successMessage .linkButton {
+  margin-top: 1rem;
+}

@@ -1,0 +1,64 @@
+/* VideoPlayer.module.css */
+
+.videoPlayer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  margin-bottom: 20px;
+  border: 1px solid var(--gray-alpha-200);
+  border-radius: 8px;
+  background-color: var(--gray-alpha-100);
+  transition: box-shadow 0.2s ease, background-color 0.2s;
+}
+
+.videoPlayer:hover {
+  box-shadow: 0 4px 12px rgba(var(--gray-rgb), 0.1);
+  background-color: var(--gray-alpha-200);
+}
+
+.thumbnailWrapper {
+  width: 100%;
+  max-width: 300px;
+  margin-bottom: 15px;
+  overflow: hidden;
+  border-radius: 8px;
+}
+
+.thumbnail {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+}
+
+.videoInfo h4 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  color: var(--foreground);
+  margin-bottom: 10px;
+}
+
+.videoInfo p {
+  color: #666;
+  margin-bottom: 15px;
+}
+
+.watchButton {
+  background-color: #0070f3;
+  color: white;
+  padding: 10px 20px;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: background-color 0.3s ease;
+}
+
+.watchButton:hover {
+  background-color: #005bb5;
+}
+
+.locked {
+  color: red;
+  font-weight: bold;
+  padding: 10px 0;
+}
