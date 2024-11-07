@@ -4,6 +4,7 @@ import { FC, ReactNode } from 'react';
 import { useUserStore } from '@/utils/user.store';
 
 const LoginGuard: FC<{ children: ReactNode }> = ({ children }) => {
+    return <></>
     const { isInitialized, isConnected } = useUserStore();
     if (!isInitialized) {
         return <p className="text-center text-lg" > Initializing...</p>;

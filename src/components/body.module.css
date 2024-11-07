@@ -1,10 +1,14 @@
 .navbarActions {
     display: flex;
     gap: 10px;
+    width: 100vw;
+    padding: 10px;
+    background: #222;
+    position: fixed;
 }
 
 .actionButton {
-    background-color: #4CAF50;
+    background-color: #444;
     color: white;
     padding: 8px 12px;
     border: none;
@@ -14,5 +18,88 @@
 }
 
 .actionButton:hover {
-    background-color: #45a049;
+    background-color: #111;
 }
+
+.pageContainer {
+    background: linear-gradient(to bottom, #33d624, #019401);
+    min-height: 100%;
+    color: white;
+}
+.pageContainerContent {
+    top: 50%; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    position: absolute;
+
+}
+
+
+/** button group styles **/
+
+/** button group styles **/
+.btnGroup {
+    border-radius: 1rem;
+    position: fixed;
+    top: 100px; 
+    right: 50%;
+    transform: translate(50%,-50%);
+    box-shadow: 0 0 100px 0px rgba(0, 0, 0, .7);
+    background: linear-gradient(to bottom, #00c566, #009e00);
+  }
+  .bgnGroupItem {
+    border: none;
+    min-width: 6rem;
+    padding: 1rem 2rem;
+    background: rgba(0,0,0,0);
+    cursor: pointer;
+    margin: 0;
+    box-shadow: inset 0px 0px 0px -15px #013220;
+    transition: all 300ms ease-out;
+  }
+  .bgnGroupItem:last-child {
+    border-top-right-radius: 1rem;
+    border-bottom-right-radius: 1rem;
+  }
+  .bgnGroupItem:first-child {
+    border-top-left-radius: 1rem;
+    border-bottom-left-radius: 1rem;
+  }
+  .bgnGroupItem:hover, .bgnGroupItem:focus {
+    color: #013220;
+    box-shadow: inset 0px -20px 0px -15px #013220;
+  }
+  .bgnGroupItem:focus {
+    outline: none;
+  }
+  .bgnGroupItem:after {
+    content: "✔️";
+    margin-left: 0.5rem;
+    display: inline-block;
+    color: rebeccapurple;
+    position: absolute;
+    transform: translatey(10px);
+    opacity: 0;
+    transition: all 200ms ease-out;
+  }
+  .bgnGroupItem--active:after {
+    opacity: 1;
+    transform: translatey(-2px);
+  }
+
+  .halo {
+    box-shadow: 0 0 100px 40px rgba(0, 0, 0, 0.25);
+    transition: all 1s;
+  }
+  .halo:hover {
+    box-shadow: 0 0 100px 100px rgba(0, 0, 0, 0.25);
+  }
+
+
+  .trees {
+    background-image: url("./tree.png");
+    position: absolute;
+    width: 100vw;
+    height: 20vh;
+    bottom: 0;
+  }

@@ -43,21 +43,40 @@ export default function RootLayout({
     <QueryClientProvider client={queryClient}>
       <html lang="en">
         <body className="h-screen flex flex-col text-center">
-          <NavBar />
-          <main className="h-page bg-gray-900 m-0">
-            <QRCodeCanvas value={uri} size={206} />
-            {children}</main>
+          {/*<NavBar />*/}
+
+          <div className={styles.btnGroup}>
+<button className={styles.bgnGroupItem + " " + styles.bgnGroupItem} onClick={connectWallet}>Connect Wallet</button>
+<button className={styles.bgnGroupItem} onClick={burnMoney}>Burn Money</button>
+<button className={styles.bgnGroupItem} onClick={sendMoney}>Send Money</button>
+</div>
+
+{/*
           <div className={styles.navbarActions}>
-            <button className={styles.actionButton} onClick={connectWallet}>
+            <button className={styles.actionButton} style={{position: "absolute", right: "40px"}} onClick={connectWallet}>
               Wallet Connect
             </button>
-            <button className={styles.actionButton} onClick={burnMoney}>
+            <button className={styles.actionButton} >
               Burn Money
             </button>
-            <button className={styles.actionButton} onClick={sendMoney}>
+            <button className={styles.actionButton} >
               Send Money
             </button>
           </div>
+*/}
+          <main className={styles.pageContainer}>
+            
+            <div className={styles.pageContainerContent}>
+
+              <QRCodeCanvas value={uri} size={206} className={styles.halo}/>
+
+              {children}
+            </div>
+            
+            </main>
+
+          <div className={styles.trees}></div>
+          
         </body>
       </html>
     </QueryClientProvider>
