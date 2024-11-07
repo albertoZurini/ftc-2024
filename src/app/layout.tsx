@@ -16,6 +16,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   const [uri, setUri] = useState<string>('');
+  const [enable, setEnable] = useState(0)
 
   const walletConnectService = new WalletConnectService(driver);
   const connectWallet = async () => {
@@ -23,6 +24,7 @@ export default function RootLayout({
     const result = await walletConnectService.login();
     console.log(result)
     setUri(result);
+    setEnable(enable + 1)
 
     // Add WalletConnect logic here
   };
@@ -39,6 +41,8 @@ export default function RootLayout({
     console.log("Sending money...");
     // Add send money logic here
   };
+
+  console.log(enable, enable ? styles.haloActive : "")
   return (
     <QueryClientProvider client={queryClient}>
       <html lang="en">
@@ -68,7 +72,7 @@ export default function RootLayout({
             
             <div className={styles.pageContainerContent}>
 
-              <QRCodeCanvas value={uri} size={206} className={styles.halo}/>
+              <QRCodeCanvas value={uri} size={206} className={styles.halo + " " + (enable > 0 ? styles.haloActive : "")}/>
 
               {children}
             </div>
