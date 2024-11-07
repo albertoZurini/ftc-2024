@@ -1,7 +1,7 @@
 "use client";
 
 import { FC, ReactNode } from 'react';
-import { useUserStore } from '../utils/user.store';
+import { useUserStore } from '@/utils/user.store';
 
 const LoginGuard: FC<{ children: ReactNode }> = ({ children }) => {
     const { isInitialized, isConnected } = useUserStore();

@@ -4,9 +4,9 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import styles from './Navbar.module.css';
 import { useUserStore } from '@/utils/user.store';
+import { WalletConnectService } from '@/utils/WalletConnectService';
 
 const activeLinkIndicatorWidthRatio = 0.7;
-
 
 export default function NavBar() {
     const pathname = usePathname();
@@ -16,6 +16,7 @@ export default function NavBar() {
     const [tabIndicatorWidth, setTabIndicatorWidth] = useState('');
     const navLinks = useRef<HTMLDivElement>(null);
 
+    // Set indicator position on active link
     useEffect(() => {
         if (!navLinks.current) return;
 
@@ -27,8 +28,9 @@ export default function NavBar() {
         setTabIndicatorWidth(activeLinkIndicatorWidthRatio * activeLinkWidth + 'px');
         setTabIndicatorLeft(activeLink.offsetLeft + indicatorLeft + 'px');
     }, [pathname]);
-    const login = false;
-    const logout = true;
+
+
+
     return (
         <div className={styles.navbar}>
             <div className={styles.navbarLogo}>
@@ -48,19 +50,18 @@ export default function NavBar() {
                 </Link>
             </nav>
 
+
             <div className={styles.navbarUser}>
                 {isConnected ? (
-                    <>
-                        <button
-                            type="button"
-                            className={styles.logoutButton}
-                            onClick={logout}
-                        >
-                            Logout
-                        </button>
-                    </>
+                    <button
+                        type="button"
+                        className={styles.logoutButton}
+                        onClick={() => console.log("Logged out")}
+                    >
+                        Logout
+                    </button>
                 ) : (
-                    <button className={styles.loginButton} onClick={login}>
+                    <button className={styles.loginButton} onClick={() => console.log("Logged in")}>
                         Login
                     </button>
                 )}
@@ -68,4 +69,3 @@ export default function NavBar() {
         </div>
     );
 }
-
